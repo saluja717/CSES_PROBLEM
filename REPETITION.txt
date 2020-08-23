@@ -1,0 +1,37 @@
+#include<iostream>
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+int main()
+{
+//ACGT
+    string s;
+    cin>>s;
+    int c=1,res=1;
+    char a=s[0];
+    for(long i=1;s[i]!='\0';i++)
+    {
+            if(a==s[i])
+            {
+                c++;
+                a=s[i];
+            }
+            else
+            {
+                 if(res<c)
+                 {
+                     res=c;
+                     
+                 }
+                 c=1;
+                  a=s[i];
+             }
+            
+    } 
+    if(res<c)
+    {
+        res=c;
+    }
+    cout<<res;
+    return 0;
+}
