@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  long long int t,n;
+	cin>>t;
+    string q;
+    
+    while(t--)
+    {
+		cin>>n;
+		set<string>s;
+         for(long long int i=0;i<n;i++)
+       {
+        cin>>q;
+        s.insert(q);        
+       }
+        for(auto i : s )
+        {
+            cout<<i<<endl;
+        }
+    }
+	return 0;
+}
