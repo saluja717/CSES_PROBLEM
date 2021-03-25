@@ -1,0 +1,47 @@
+ long long getMaxArea(long long a[], int n){
+    
+      stack<long long>s;
+      long long area,ans=INT_MIN,i=0;
+     for(i=0;i<n;)
+    {
+    if(s.empty() || a[s.top()]<=a[i])
+    {
+        s.push(i++);
+    }
+    else
+    {
+      long long t = s.top();
+      s.pop();
+      if(s.empty())
+      {
+          area= a[t]*i;
+      }
+      else
+      {
+          area=a[t]*(i-s.top()-1);
+      }
+      if(area>ans)
+      {
+          ans=area;
+      }
+    }
+   }
+   while(!s.empty())
+   {
+      long long t = s.top();
+      s.pop();
+      if(s.empty())
+      {
+          area= a[t]*i;
+      }
+      else
+      {
+          area=a[t]*(i-s.top()-1);
+      }
+      if(area>ans)
+      {
+          ans=area;
+      }
+   }
+   return ans;
+    
