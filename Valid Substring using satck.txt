@@ -1,0 +1,25 @@
+ int findMaxLen(string s) {
+        stack<int>a;
+        int res=0,i;
+        a.push(-1);
+        for( i=0;i<s.size();i++)
+        {
+            if(s[i]=='(')
+            {
+                a.push(i);
+            }
+            else
+            {
+                a.pop();
+            }
+            if(!a.empty())
+            {
+                res= max(res,i-a.top());
+            }
+            else
+            {
+                a.push(i);
+            }
+        }
+        return res;
+    }
