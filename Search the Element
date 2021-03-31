@@ -1,0 +1,30 @@
+bool searchMatrix(vector<vector<int>>& v, int target)    {
+         
+        if(!v.size())
+        {
+            return false;
+        }
+        
+        int l=0,h=(v[0].size()*v.size()-1);
+        int c= v[0].size();
+        int mid;
+        while(l<=h)
+        {
+            mid=(l+(h-l)/2);
+            if(v[mid/c][mid%c]==target)
+            {
+                return true;
+            }
+            else if(v[mid/c][mid%c]>target)
+            {
+                h=mid-1;
+            }
+            else 
+            {
+                l=mid+1;
+            }
+            
+        }
+        return false;
+        
+    }
